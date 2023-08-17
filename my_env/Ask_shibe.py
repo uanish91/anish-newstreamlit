@@ -30,9 +30,13 @@ if __name__ == '__main__':
     print_hi('PyCharm')
 
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/
+__import__('pysqlite3')
+import sys
+sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
 import streamlit as st
 import langchain
 page_config = st.set_page_config(page_title="🦜🔗 Ask the Doc App")
+import tiktoken
 from langchain.llms import OpenAI
 from langchain.text_splitter import CharacterTextSplitter
 from langchain.embeddings import OpenAIEmbeddings
@@ -82,5 +86,3 @@ with st.form('myform', clear_on_submit=True):
 
 if len(result):
     st.info(response)
-
-
