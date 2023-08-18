@@ -3,3 +3,7 @@ PyPDF2
 streamlit 
 langchain 
 openai
+pypdf 
+chromadb
+tiktoken
+docx2txt
